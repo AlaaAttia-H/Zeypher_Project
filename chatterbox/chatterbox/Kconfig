@@ -1,0 +1,51 @@
+mainmenu "Chatterbox App"
+
+config TASK1_PRIORITY
+  int "Priority of Task 1" 
+  default 0
+
+config TASK1_PERIOD_MS
+  int "Period of Task 1" 
+  default 10000
+
+config TASK1_EXECUTION_TIME_MS
+  int "Period of Task 1" 
+  default 1000
+
+config TASK1_RELEASE_MS
+  int "Period of Task 1" 
+  default 0
+
+config TASK2_PRIORITY
+  int "Priority of Task 2" 
+  default 0
+
+config TASK2_PERIOD_MS
+  int "Period of Task 2" 
+  default 10000
+
+config TASK2_EXECUTION_TIME_MS
+  int "Period of Task 2" 
+  default 1000
+
+config TASK2_RELEASE_MS
+  int "Period of Task 2" 
+  default 0
+
+config TASK3_PRIORITY
+  int "Priority of Task 3" 
+  default 0
+
+config TASK3_PERIOD_MS
+  int "Period of Task 3" 
+  default 10000
+
+config TASK3_EXECUTION_TIME_MS
+  int "Period of Task 3" 
+  default 1000
+
+config TASK3_RELEASE_MS
+  int "Period of Task 3" 
+  default 0
+
+source "Kconfig.zephyr"

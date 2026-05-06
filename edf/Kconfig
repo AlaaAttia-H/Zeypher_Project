@@ -1,0 +1,59 @@
+mainmenu "TDA App"
+
+config NUM_TASKS
+  int "Number of tasks"
+  default 4
+
+config TASK1_PERIOD_MS
+  int "Period of TASK1" 
+  default 10000
+
+config TASK1_EXECUTION_TIME_MS
+  int "Period of TASK1" 
+  default 1000
+
+config TASK1_RELEASE_MS
+  int "Period of TASK1" 
+  default 0
+
+config TASK2_PERIOD_MS
+  int "Period of TASK2" 
+  default 10000
+
+config TASK2_EXECUTION_TIME_MS
+  int "Period of TASK2" 
+  default 1000
+
+config TASK2_RELEASE_MS
+  int "Period of TASK2" 
+  default 0
+
+config TASK3_PERIOD_MS
+  int "Period of TASK3" 
+  default 10000
+
+config TASK3_EXECUTION_TIME_MS
+  int "Period of TASK3" 
+  default 1000
+
+config TASK3_RELEASE_MS
+  int "Period of TASK3" 
+  default 0
+
+config TASK4_PERIOD_MS
+  int "Period of TASK4" 
+  default 10000
+
+config TASK4_EXECUTION_TIME_MS
+  int "Period of TASK4" 
+  default 1000
+
+config TASK4_RELEASE_MS
+  int "Period of TASK4" 
+  default 0
+
+config SNOWFLAKES
+  int "Number of snowflakes to animate"
+  default 40
+
+source "Kconfig.zephyr"

@@ -1,0 +1,35 @@
+/**
+* TODO: Extend device tree overlay so that
+* the LEDs of the individual tasks are connected via
+* - Task1: GPIO 16
+* - Task2: GPIO 17
+* - Task3: GPIO 18
+*/
+
+
+/ {
+  custom_gpio {
+    compatible = "gpio-keys";
+
+    task1_led: task1_led {
+      gpios = <&gpio0 16 GPIO_ACTIVE_HIGH>;
+      label = "Task 1 LED";
+    };
+
+    task2_led: task2_led {
+      gpios = <&gpio0 17 GPIO_ACTIVE_HIGH>;
+      label = "Task 2 LED";
+    };
+
+    task3_led: task3_led {
+      gpios = <&gpio0 18 GPIO_ACTIVE_HIGH>;
+      label = "Task 3 LED";
+    };
+  };
+
+  chosen {
+    task1_led = &task1_led;
+    task2_led = &task2_led;
+    task3_led = &task3_led;
+  };
+};

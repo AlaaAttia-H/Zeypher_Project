@@ -1,0 +1,64 @@
+/ {
+    custom_gpio {
+        compatible = "gpio-keys";
+
+        task1_led: task1_led {
+            gpios = <&gpio0 16 GPIO_ACTIVE_HIGH>;
+            label = "Task 1 LED";
+        };
+        task2_led: task2_led {
+            gpios = <&gpio0 17 GPIO_ACTIVE_HIGH>;
+            label = "Task 2 LED";
+        };
+        task3_led: task3_led {
+            gpios = <&gpio0 18 GPIO_ACTIVE_HIGH>;
+            label = "Task 3 LED";
+        };
+        /* Button on GPIO15, active low, pull-up */
+        button: button {
+            gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
+            label = "User Button";
+        };
+    };
+
+    /* TODO (Part b): Configure a button input on PIN 15 */
+
+    chosen {
+        task1_led = &task1_led;
+        task2_led = &task2_led;
+        task3_led = &task3_led;
+	// Uncomment after specifying *ssd1306* and *button*
+        display = &ssd1306;
+        sw0 = &button;
+    };
+
+    
+};
+
+/* TODO: Configure I2C for the SSD1306 display. 
+* You can reuse your solution from the previous exercise. */
+/* I2C0 on ESP32 DevKitC uses:
+ *   SCL = GPIO22  (D22)
+ *   SDA = GPIO21  (D21)
+ */
+&i2c0 {
+    status = "okay";
+
+    /* SSD1306 with I2C address 0x3C */
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+
+        width = <128>;
+        height = <64>;
+
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+
+        segment-remap;
+        com-invdir;
+        prechargep = <0x22>;
+    };
+};
