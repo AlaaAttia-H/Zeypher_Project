@@ -1,7 +1,6 @@
 Overview
 ********
 
-Please consult the assignment sheet for the implementation requirements.
 
 You can build and flash the application via
 ```bash
